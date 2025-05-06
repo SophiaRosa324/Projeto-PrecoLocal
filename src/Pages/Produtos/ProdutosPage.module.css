@@ -1,0 +1,74 @@
+.container {
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+h3{
+  color: #000;
+}
+
+.title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.filtros button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 40px;
+  background-color: #66CDAA;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filtros button:hover {
+  background-color: #3CB371;
+}
+
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fffffff6;
+  color: #000;
+  border: 1px solid #ffffff33;
+  backdrop-filter: blur(8px);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.card img {
+  max-width: 100px;
+  height: auto;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  font-size: 16px;
+  margin: 10px 0;
+  padding: 0;
+}
+
+.card p {
+  font-size: 14px;
+  margin: 4px 0;
+}

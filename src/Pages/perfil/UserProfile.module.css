@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --primary-color: #66CDAA;
+  --secondary-color:#333;
+  --background-color: #000;
+  --text-color: #fffffff6;
+  --accent-color: #7dd093;
+}
+
+.pageBackground {
+  background-color: var(--background-color);
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+}
+
+.profileContainer {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 2rem;
+  background-color: #333;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+.profileContent {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.profilePictureSection {
+  text-align: center;
+}
+
+.profilePicture {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--secondary-color);
+}
+
+.changePhotoLabel {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--accent-color);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.changePhotoLabel:hover {
+  color: var(--primary-color);
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.userInfo {
+  flex: 1;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.userInfo p {
+  margin-bottom: 10px;
+}
+
+.favoritesSection {
+  margin-top: 2rem;
+  border-top: 1px solid #000000;
+  padding-top: 1rem;
+}
+
+.favoritesSection h2 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.marketItem {
+  background-color: #7dd093;
+  padding: 10px 14px;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  list-style: none;
+}
+
+.logoutButton{
+    margin-top: 1rem;
+    background: #ff4d4d;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer ;
+}
+
+@media (max-width: 768px) {
+    .profileContent {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .userInfo {
+      width: 100%;
+    }
+  
+    .profileContainer {
+      margin: 20px;
+      padding: 1.5rem;
+    }
+  
+    .favoritesSection ul {
+      padding-left: 0;
+    }
+  
+    .marketItem {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
