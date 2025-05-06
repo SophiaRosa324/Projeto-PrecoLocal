@@ -37,6 +37,6 @@
  npm run dev
  
  👥 Equipe
- Beatriz de Andrade Leite
- Sophia Rosa da Silva Machado
+ Beatriz de Andrade Leite,
+ Sophia Rosa da Silva Machado e
  Matheus Machado Sprengel
