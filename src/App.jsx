@@ -8,7 +8,7 @@ import { ProdutosPage } from "./Pages/Produtos/ProdutosPage";
 import { Contatos } from './Pages/Contatos/Contatos'
 import { UserProfile } from './Pages/perfil/UserProfile';
 import { RotaPrivada } from './Components/RotaPrivada/RotaPrivada';
-import { Comparador} from './Pages/Comparador/Comparador';
+
 
 function App() {
   return (
@@ -19,7 +19,6 @@ function App() {
           <Route path="/Cadastro" element={<Register/>} />
           <Route path="/Login" element={<Login />} />
           <Route path="/ProdutosPage" element={<ProdutosPage />} />
-          <Route path="/Comparador" element={<Comparador />} />
           <Route path="/Contatos" element={<Contatos />} />
           <Route path="/Pagina404" element={<Pagina404 />} />
           <Route path="*" element={<Pagina404 />} />
