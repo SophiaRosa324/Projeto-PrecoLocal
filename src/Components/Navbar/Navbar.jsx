@@ -16,7 +16,6 @@ const Navbar = () => {
       <nav className={`${style.nav} ${menuOpen ? style.open : ""}`}>
         <Link to="/" onClick={closeMenu}>Início</Link> 
         <Link to="/ProdutosPage" onClick={closeMenu}>Categorias</Link>
-        <Link to="/Comparador" onClick={closeMenu}>Produtos</Link>
         <Link to="/perfil" onClick={closeMenu}>Perfil</Link>
         <a href="#como-funciona" onClick={closeMenu}>Como funciona</a>
         <Link to="/Login" onClick={closeMenu}>Login</Link>
