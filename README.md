@@ -23,7 +23,7 @@
  
  **Backend (Futuro):**
  - Node.js
- - Express
+ - Sqlite
  - JWT (Autenticação)
  
  ## 📦 Como Executar o Projeto
