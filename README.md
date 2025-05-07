@@ -1,12 +1,42 @@
-# React + Vite
+# Preço Local
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Plataforma de comparação de preços em lojas físicas da sua região**
+ ![Status: Em Desenvolvimento]
 
-Currently, two official plugins are available:
+## ✨ Visão Geral
+ O Preço Local é uma solução digital que ajuda consumidores a:
+ - Comparar preços de produtos em lojas físicas próximas
+ - Economizar tempo e dinheiro
+ - Encontrar as melhores ofertas locais
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Funcionalidades
+ ✔️ Busca por categorias de produtos  
+ ✔️ Interface dark mode e responsiva  
+ ✔️ Sistema de cadastro/login de usuários  
+ 🔜 Em breve: geolocalização e integração com lojas reais  
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tecnologias
+ **Frontend:**
+ - React.js
+ - React Router DOM
+ - CSS Modules
+ 
+ **Backend (Futuro):**
+ - Node.js
+ - Sqlite
+ - JWT (Autenticação)
+ 
+ ## 📦 Como Executar o Projeto
+ **1. Clone o repositório:**
+ git clone https://github.com/seu-usuario/preco-local.git
+ 
+ **2. Instale as dependências:**
+ npm install
+ 
+ **3. Inicie o servidor de desenvolvimento:**
+ npm run dev
+ 
+ 👥 Equipe
+ Beatriz de Andrade Leite,
+ Sophia Rosa da Silva Machado e
+ Matheus Machado Sprengel
