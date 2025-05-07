@@ -18,11 +18,17 @@ if (
 
 try {
     
-    $db = new PDO("sqlite:../../../usuarios.db");
+    $db = new PDO("sqlite:" . __DIR__ . "/../../../usuarios.db");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $dbPath = realpath(__DIR__ . "/../../../usuarios.db");
+if (!file_exists($dbPath)) {
+    echo json_encode(["success" => false, "message" => "Banco de dados não encontrado."]);
+    exit;
+}
+
 
     // Prepara e executa a inserção com senha criptografada
-    $stmt = $db->prepare("INSERT INTO usuarios (nome, email, senha) VALUES (:nome, :email, :senha)");
+    $stmt = $db->prepare("INSERT INTO usuarios (nome, email, password) VALUES (:nome, :email, :senha)");
     $stmt->bindParam(':nome', $data->nome);
     $stmt->bindParam(':email', $data->email);
     $senhaCriptografada = password_hash($data->password, PASSWORD_DEFAULT);

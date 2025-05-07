@@ -1,25 +1,34 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from './UserProfile.module.css';
-import { Navbar } from '../../Components/Navbar/Navbar';
+import { jwtDecode } from "jwt-decode"; 
+import styles from "./UserProfile.module.css";
+import { Navbar } from "../../Components/Navbar/Navbar";
 
 export default function UserProfile() {
   const [user, setUser] = useState(null);
-
   const navigate = useNavigate();
 
-  // Busca o usuário do localStorage
+  // Busca o token do localStorage e decodifica os dados do usuário
   useEffect(() => {
-    const storedUser = localStorage.getItem("loggedInUser");
-    if (storedUser) {
-      setUser(JSON.parse(storedUser));
+    const token = localStorage.getItem("token");
+    if (token) {
+      try {
+        const decodedToken = jwtDecode(token);
+        setUser({
+          nome: decodedToken.nome, // Nome do usuário
+          email: decodedToken.email,
+          profilePicture: "/default-avatar.png",
+          favoriteMarkets: decodedToken.favoriteMarkets || [],
+        });
+      } catch (error) {
+        console.error("Erro ao decodificar o token:", error);
+        navigate("/login");
+      }
     } else {
-      navigate("/login"); // redireciona se não estiver logado
+      navigate("/login");
     }
   }, [navigate]);
-  
 
-  // Muda a foto de perfil
   const handleProfilePicChange = (e) => {
     const file = e.target.files[0];
     if (file && user) {
@@ -29,17 +38,16 @@ export default function UserProfile() {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("loggedInUser");
+    localStorage.removeItem("token"); // Remove o token
     navigate("/login");
   };
 
-  // Enquanto carrega os dados
   if (!user) {
     return (
       <div className={styles.pageBackground}>
         <Navbar />
         <div className={styles.profileContainer}>
-          <p style={{ color: 'white' }}>Carregando dados do usuário...</p>
+          <p style={{ color: "white" }}>Carregando dados do usuário...</p>
         </div>
       </div>
     );
@@ -54,7 +62,7 @@ export default function UserProfile() {
         <section className={styles.profileContent}>
           <div className={styles.profilePictureSection}>
             <img
-              src={user.profilePicture || '/default-avatar.png'}
+              src={user.profilePicture || "/default-avatar.png"}
               alt="Foto de perfil"
               className={styles.profilePicture}
             />
@@ -70,8 +78,12 @@ export default function UserProfile() {
           </div>
 
           <div className={styles.userInfo}>
-            <p><strong>Nome:</strong> {user.name}</p>
-            <p><strong>Email:</strong> {user.email}</p>
+            <p>
+              <strong>Nome:</strong> {user.name}
+            </p>
+            <p>
+              <strong>Email:</strong> {user.email}
+            </p>
           </div>
         </section>
 
@@ -79,7 +91,9 @@ export default function UserProfile() {
           <h2>Mercados Favoritos</h2>
           <ul className={styles.marketList}>
             {user.favoriteMarkets?.map((market, index) => (
-              <li key={index} className={styles.marketItem}>{market}</li>
+              <li key={index} className={styles.marketItem}>
+                {market}
+              </li>
             ))}
           </ul>
         </section>

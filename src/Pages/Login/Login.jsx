@@ -13,9 +13,9 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
+  
     try {
-      const response = await fetch("http://localhost/acesso.php", {
+      const response = await fetch("http://localhost/Projeto-PrecoLocal/src/Pages/Login/acesso.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -25,14 +25,15 @@ const Login = () => {
           password: senha,
         }),
       });
-
+  
       const data = await response.json();
-
+      console.log("Resposta do servidor:", data); // Log para depuração
+  
       if (data.success) {
-        
-        localStorage.setItem("token", data.token);
+        console.log("Token recebido:", data.token);
+        localStorage.setItem("token", data.token); // Salva o token no localStorage
         alert("Login realizado com sucesso!");
-        navigate("/home");
+        navigate("/"); // Redireciona para a página inicial
       } else {
         setErrorMessage(data.message || "Falha no login.");
       }
@@ -41,7 +42,6 @@ const Login = () => {
       setErrorMessage("Erro ao conectar com o servidor.");
     }
   };
-
   return (
     <>
       <Navbar />

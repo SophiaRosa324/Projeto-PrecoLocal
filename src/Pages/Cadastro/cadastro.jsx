@@ -26,7 +26,7 @@ const Register = () => {
 
     try {
       console.log("Enviando dados:", newUser);
-      const response = await fetch("http://localhost/vite-project/src/Pages/Cadastro/Cadastrar.php", {
+      const response = await fetch("http://localhost/Projeto-PrecoLocal/src/Pages/Cadastro/Cadastrar.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
