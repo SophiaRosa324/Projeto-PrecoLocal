@@ -62,7 +62,7 @@ try {
     $db = new PDO("sqlite:" . __DIR__ . "/../../../usuarios.db");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Consulta o usuário
+    // Consulta 
     $stmt = $db->prepare("SELECT * FROM usuarios WHERE email = :email");
     $stmt->bindParam(":email", $data->email);
     $stmt->execute();
