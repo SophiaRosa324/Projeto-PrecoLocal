@@ -17,21 +17,18 @@ const Contato = () => {
             <img src={Imgtemp} alt="Sophia Rosa" className={style.devPhoto} />
             <h2>Sophia Rosa</h2>
             <p><strong>Email:</strong> <a href="mailto:sophiarsm8@gmail.com">sophiarsm8@gmail.com</a></p>
-            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/ana-souza" target="_blank" rel="noopener noreferrer">linkedin.com/in/ana-souza</a></p>
           </div>
 
           <div className={style.card}>
             <img src={Imgtemp} alt="Beatriz Andrade" className={style.devPhoto} />
             <h2>Beatriz Andrade</h2>
-            <p><strong>Email:</strong> <a href="mailto:BeatrizAndrade@gmail.com">BeatrizAndrade@gmail.com</a></p>
-            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/carlos-lima" target="_blank" rel="noopener noreferrer">linkedin.com/in/carlos-lima</a></p>
+            <p><strong>Email:</strong> <a href="mailto:beatrizandrade020409@gmail.com">beatrizandrade020409@gmail.com</a></p>
           </div>
 
           <div className={style.card}>
             <img src={Imgtemp} alt="Matheus Sprengel" className={style.devPhoto} />
             <h2>Matheus Sprengel</h2>
-            <p><strong>Email:</strong> <a href="mailto:MatheuSprengel@gmail.com">MatheuSprengel@gmail.com</a></p>
-            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/juliana-ribeiro" target="_blank" rel="noopener noreferrer">linkedin.com/in/juliana-ribeiro</a></p>
+            <p><strong>Email:</strong> <a href="mailto:matheussprengel@gmail.com">matheussprengel@gmail.com</a></p>
           </div>
         </div>
       </div>

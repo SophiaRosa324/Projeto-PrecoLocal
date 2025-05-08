@@ -56,6 +56,12 @@ h3{
   text-align: center;
 }
 
+.descricao {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
 .card img {
   max-width: 100px;
   height: auto;

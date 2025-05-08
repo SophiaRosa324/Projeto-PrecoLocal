@@ -5,10 +5,14 @@ import {ProductCard} from "../Categorias/ProductCard";
 import styles from './ProdutosPage.module.css';
 import { Navbar } from "../../Components/Navbar/Navbar";
 import { Rodape } from "../../Components/Rodape/Rodape";
+import { Modal } from "../../Components/Modal/Modal";
 
 const ProdutosPage = () => {
   const { produtos, loading } = useProdutos();
   const [categoriaSelecionada, setCategoriaSelecionada] = useState("Todos");
+
+  const [produtoSelecionado, setProdutoSelecionado] = useState(null);
+
 
   if (loading) return <p>Carregando produtos...</p>;
 
@@ -31,15 +35,20 @@ const ProdutosPage = () => {
         ))}
       </div>
       <div className={styles.produtos}>
-        {produtosFiltrados.map(p => (
-          <div key={p.id} className={styles.card}>
-            <img src={p.image} alt={p.title} />
-            <h3>{p.title}</h3>
-            <p>{p.category}</p>
-            <p><strong>R$ {p.price.toFixed(2)}</strong></p>
-          </div>
-        ))}
+      {produtosFiltrados.map(p => (
+        <div key={p.id} className={styles.card}>
+          <img src={p.image} alt={p.title} />
+          <h3>{p.title}</h3>
+          <p>{p.category}</p>
+          <p><strong>R$ {p.price.toFixed(2)}</strong></p>
+
+          <button onClick={() => setProdutoSelecionado(p)}>
+            Ver descrição
+          </button>
+        </div>
+      ))}
       </div>
+      <Modal produto={produtoSelecionado} onClose={() => setProdutoSelecionado(null)} />
     </div>
 
     <Rodape/>
